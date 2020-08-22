@@ -32,7 +32,7 @@ module IbRubyProxy
       # @private
       def self.create_drb_ib_client(host:, port:)
         drb_ib_client = DRbObject.new(nil, "druby://#{host}:#{port}")
-        DRb::DRbServer.verbose = true
+        DRb::DRbServer.verbose = false
         DRb.install_id_conv ::DRb::TimerIdConv.new 60
         DRb.start_service
         drb_ib_client

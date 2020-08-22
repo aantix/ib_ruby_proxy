@@ -46,7 +46,7 @@ module IbRubyProxy
       # Clients of the DRb service will get an {IbClientAdapter} object to interact with the IB api
       # @return [void]
       def start
-        DRb.start_service("druby://#{drb_host}:#{drb_port}", ib_client_adapter, verbose: true)
+        DRb.start_service("druby://#{drb_host}:#{drb_port}", ib_client_adapter, verbose: false)
         start_ib_message_processing_thread
         puts "Ib proxy server started at druby://#{drb_host}:#{drb_port}. Connected to IB at"\
              " #{ib_host}:#{ib_port}"

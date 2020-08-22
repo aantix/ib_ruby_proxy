@@ -2,6 +2,26 @@
 
 [![CircleCI](https://circleci.com/gh/jorgemanrubia/ib_ruby_proxy.svg?style=svg)](https://circleci.com/gh/jorgemanrubia/ib_ruby_proxy)
 
+## IB Classes
+
+https://interactivebrokers.github.io/tws-api/annotated.html
+
+## Setup
+
+`rvm install "jruby-9.2.10.0"`
+
+`gem install awesome_print`
+
+`gem install concurrent-ruby`
+
+`gem install commander`
+
+To start:
+ 
+`cd ~/dev/markethackers/ib_ruby_proxy`
+
+`bin/ibproxy --ib-port 7496 --drb-port 1992`
+
 Service for invoking the [Interactive Brokers (IB) API](https://www.interactivebrokers.com/en/index.php?f=5041) from Ruby.
 
 `ib_ruby_proxy` acts as a mediator between your Ruby code and the IB software making the API calls ([Gateway](https://www.interactivebrokers.com/en/index.php?f=16457) or [TWS](https://www.interactivebrokers.com/en/index.php?f=16457)). Internally, it invokes the official IB Java API and translates objects between Ruby and Java worlds. It also translates method and callback names so that you can use Ruby convention (underscore) instead of Java's (camelcase).
